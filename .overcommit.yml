@@ -1,0 +1,30 @@
+PreCommit:
+  RuboCop:
+    enabled: true
+    on_warn: warn
+    required: true
+
+  ScssLint:
+    enabled: true
+    on_warn: fail
+    required_executable: 'scss-lint'
+    install_command: 'gem install scss_lint'
+    include:
+      - 'src/style/**/*.scss'
+
+CommitMsg:
+  CapitalizedSubject:
+    enabled: true
+    on_warn: fail
+
+  TrailingPeriod:
+    enabled: true
+    on_warn: fail
+
+  TextWidth:
+    enabled: true
+    on_warn: fail
+
+  SingleLineSubject:
+    enabled: true
+    on_warn: fail

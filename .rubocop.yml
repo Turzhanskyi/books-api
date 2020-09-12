@@ -1,0 +1,141 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 2.7.1
+  Exclude:
+    - 'bin/bundle'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'config/environments/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+    - 'config/initializers/doorkeeper.rb'
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+
+Style/RedundantRegexpEscape:
+  Enabled: true
+
+Style/SlicingWithRange:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/HashEachMethods:
+  Enabled: true
+
+Style/HashTransformKeys:
+  Enabled: true
+
+Style/HashTransformValues:
+  Enabled: true
+
+Layout/LineLength:
+  Max: 120
+
+Style/GuardClause:
+  Enabled: true
+
+Style/NumericLiteralPrefix:
+  Enabled: false
+
+Layout/HashAlignment:
+  EnforcedHashRocketStyle: table
+  EnforcedColonStyle: table
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+  SupportedStyles:
+    - single_quotes
+    - double_quotes
+
+Style/Lambda:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: true
+
+Layout/SpaceInLambdaLiteral:
+  Enabled: false
+
+Layout/ParameterAlignment:
+  EnforcedStyle: with_first_parameter
+  SupportedStyles:
+    - with_first_parameter
+    - with_fixed_indentation
+
+Layout/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+  SupportedStyles:
+    - aligned
+    - indented
+    - indented_relative_to_receiver
+  IndentationWidth: 2
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Exclude:
+    - app/helpers/**/*.rb
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: always
+  SupportedStyles:
+    - always
+    - never
+
+Metrics/ModuleLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/BlockLength:
+  Exclude:
+    - "**/*_spec.rb"
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 25
+
+Style/RedundantBegin:
+  Exclude:
+    - "**/*_spec.rb"
+
+Lint/MissingCopEnableDirective:
+  Enabled: false
+
+Style/FormatStringToken:
+  Enabled: false
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Lint/RaiseException:
+  Enabled: true
+
+Lint/StructNewOverride:
+  Enabled: true
+
+Style/ExponentialNotation:
+  Enabled: true
