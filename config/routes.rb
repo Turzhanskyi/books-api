@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :books, only: %i[index create destroy]
+  namespace :api do
+    namespace :v1 do
+      resources :books, only: %i[index create destroy]
+    end
+  end
 end
