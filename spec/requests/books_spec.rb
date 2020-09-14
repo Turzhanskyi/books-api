@@ -5,8 +5,7 @@ require 'rails_helper'
 describe 'Books API', type: :request do
   describe 'GET /books' do
     before do
-      FactoryBot.create(:book, title: 'book1', author: 'author1')
-      FactoryBot.create(:book, title: 'book2', author: 'author2')
+      create_list(:book, 2)
     end
 
     it 'return all books' do
@@ -18,9 +17,11 @@ describe 'Books API', type: :request do
   end
 
   describe 'POST /books' do
+    let!(:author) { create(:author) }
+
     it 'create a new book' do
       expect do
-        post '/api/v1/books', params: { book: { title: 'book3', author: 'author3' } }
+        post '/api/v1/books', params: { book: { title: 'book3', author_id: author.id } }
       end.to change { Book.count }.from(0).to(1)
 
       expect(response).to have_http_status(:created)
@@ -28,7 +29,7 @@ describe 'Books API', type: :request do
   end
 
   describe 'DELETE /books/:id' do
-    let!(:book) { FactoryBot.create(:book, title: 'book4', author: 'author4') }
+    let!(:book) { create(:book) }
 
     it 'deletes a book' do
       expect do

@@ -2,5 +2,7 @@
 
 FactoryBot.define do
   factory :book do
+    title { 'Title_Book' }
+    author
   end
 end
