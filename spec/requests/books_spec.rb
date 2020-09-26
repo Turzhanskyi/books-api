@@ -17,11 +17,12 @@ describe 'Books API', type: :request do
   end
 
   describe 'POST /books' do
-    let!(:author) { create(:author) }
-
     it 'create a new book' do
       expect do
-        post '/api/v1/books', params: { book: { title: 'book3', author_id: author.id } }
+        post '/api/v1/books', params: {
+          book:   { title: 'The Martian' },
+          author: { first_name: 'Andy', last_name: 'Weir', age: '48' }
+        }
       end.to change { Book.count }.from(0).to(1)
 
       expect(response).to have_http_status(:created)
